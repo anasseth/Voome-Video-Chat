@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import dashboard1 from '../../assets/images/dashboard1.png';
 import dashboard2 from '../../assets/images/dashboard2.png';
 import dashboard3 from '../../assets/images/dashboard3.png';
-import { Header } from '../../components/layout/Header';
+import Header from '../components/layout/Header';
 
 function Dashboard() {
     useAuth();
     const navigate = useNavigate();
 
     return (
-        <>
+        <EuiProvider colorMode='light'>
             <div
                 style={{
                     height: "100vh",
@@ -21,6 +21,7 @@ function Dashboard() {
                     flexDirection: "column"
                 }}
             >
+                <Header />
                 <EuiFlexGroup justifyContent='center' alignItems='center' style={{ margin: '5vw 10vh' }}>
                     <EuiFlexItem>
                         <EuiCard
@@ -51,7 +52,7 @@ function Dashboard() {
                     </EuiFlexItem>
                 </EuiFlexGroup>
             </div>
-        </>
+        </EuiProvider>
     );
 }
 
